@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 5px;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #00ff73;
+  background-image: linear-gradient(to right, #1a1919, #424242);
+}
+
+#small {
+  font-size: smaller;
+  color: gray;
+}
+
+button {
+  display: block;
+  margin-top: 10px;
+  min-width: 3.5rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 1.5rem;
+  font-family: inherit;
+  border: none;
+  background: #1d4ed8;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+h1 {
+  font-size: 48px;
+  background-image: linear-gradient(to right, #126d00, #00ff80);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Gilt für die gesamte Seite */
+html, body {
+  /* Für Firefox */
+  scrollbar-width: none; 
+  
+  /* Für Internet Explorer und ältere Edge-Versionen */
+  -ms-overflow-style: none; 
+}
+
+/* Für Chrome, Safari und Opera */
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
+* Gilt für die gesamte Seite */
+html, body {
+  /* Für Firefox */
+  scrollbar-width: none; 
+  
+  /* Für Internet Explorer und ältere Edge-Versionen */
+  -ms-overflow-style: none; 
+}
+
+/* Für Chrome, Safari und Opera */
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* ==========================================
+   OFFSCREEN LEFT TO RIGHT ANIMATION
+   ========================================== */
+
+/* 1. Animation definieren: Startet bei -100vw (100% der Bildschirmbreite nach links verschoben) */
+@keyframes slidePageFromLeft {
+  0% {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 2. Gleichzeitig auf alle Elemente anwenden */
+h1, p, #small, button {
+  animation: slidePageFromLeft 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
