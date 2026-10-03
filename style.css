@@ -47,42 +47,16 @@ h1 {
   color: transparent;
 }
 
-/* Gilt für die gesamte Seite */
 html, body {
-  /* Für Firefox */
   scrollbar-width: none; 
-  
-  /* Für Internet Explorer und ältere Edge-Versionen */
   -ms-overflow-style: none; 
 }
 
-/* Für Chrome, Safari und Opera */
 html::-webkit-scrollbar, 
 body::-webkit-scrollbar {
   display: none;
 }
 
-
-* Gilt für die gesamte Seite */
-html, body {
-  /* Für Firefox */
-  scrollbar-width: none; 
-  
-  /* Für Internet Explorer und ältere Edge-Versionen */
-  -ms-overflow-style: none; 
-}
-
-/* Für Chrome, Safari und Opera */
-html::-webkit-scrollbar, 
-body::-webkit-scrollbar {
-  display: none;
-}
-
-/* ==========================================
-   OFFSCREEN LEFT TO RIGHT ANIMATION
-   ========================================== */
-
-/* 1. Animation definieren: Startet bei -100vw (100% der Bildschirmbreite nach links verschoben) */
 @keyframes slidePageFromLeft {
   0% {
     transform: translateX(-100vw);
@@ -93,8 +67,6 @@ body::-webkit-scrollbar {
     opacity: 1;
   }
 }
-
-/* 2. Gleichzeitig auf alle Elemente anwenden */
 h1, p, #small, button {
   animation: slidePageFromLeft 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
